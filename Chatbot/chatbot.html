@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Railway Comfort & Safety System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link  rel="stylesheet" href="style.css ">
+    </head>
+<body>
+    <!-- Animated background elements -->
+    <div class="train-moving">🚄</div>
+    <div class="luggage-icon" style="top: 10%; left: 5%;">🧳</div>
+    <div class="luggage-icon" style="top: 20%; right: 8%; animation-delay: 0.5s;">🎒</div>
+    <div class="heart-icon" style="top: 70%; left: 15%; animation-delay: 1s;">💖</div>
+    <div class="heart-icon" style="bottom: 15%; right: 10%; animation-delay: 1.5s;">💗</div>
+    
+    <!-- Home button (visible on subpages) -->
+    <button class="home-btn" id="homeBtn" style="display: none;">
+        <span>←</span> Home
+    </button>
+    
+    <!-- Main Menu Container -->
+    <div class="container menu-container" id="mainMenu">
+        <div class="icon">🚆</div>
+        <h1>Indian Railway Comfort & Safety System</h1>
+        <p>Enhance your train travel experience with comfort and safety features</p>
+        
+        <div class="btn-container">
+            <button class="btn btn-primary" id="comfortBtn">Rate Coach Comfort</button>
+            <button class="btn btn-luggage" id="luggageBtn">Luggage Space Checker</button>
+            <button class="btn btn-women" id="womenSafeBtn">Women-Safe Coach</button>
+            <button class="btn btn-railway" id="trainInfoBtn">Train Information</button>
+        </div>
+    </div>
+    
+    <!-- Comfort Rating Container -->
+    <div class="container comfort-container" id="comfortContainer">
+        <div class="icon">💺</div>
+        <h1>Coach Comfort Meter</h1>
+        <p>Rate your experience in this train coach</p>
+        
+        <form id="comfortForm">
+            <div class="form-group">
+                <label for="comfortTrainNumber">Train Number/Name</label>
+                <input type="text" id="comfortTrainNumber" class="form-control" placeholder="Enter train number or name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="comfortCoachNumber">Coach Number</label>
+                <input type="text" id="comfortCoachNumber" class="form-control" placeholder="Enter coach number (e.g., B3)" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Cleanliness</label>
+                <div class="rating-container">
+                    <label class="rating-option">
+                        <input type="radio" name="cleanliness" value="1" required>
+                        <span class="rating-emoji">😠</span>
+                        <span>Poor</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="cleanliness" value="2">
+                        <span class="rating-emoji">😕</span>
+                        <span>Fair</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="cleanliness" value="3">
+                        <span class="rating-emoji">😐</span>
+                        <span>Average</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="cleanliness" value="4">
+                        <span class="rating-emoji">🙂</span>
+                        <span>Good</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="cleanliness" value="5">
+                        <span class="rating-emoji">😊</span>
+                        <span>Excellent</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Seat Comfort</label>
+                <div class="rating-container">
+                    <label class="rating-option">
+                        <input type="radio" name="seatComfort" value="1" required>
+                        <span class="rating-emoji">😠</span>
+                        <span>Poor</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="seatComfort" value="2">
+                        <span class="rating-emoji">😕</span>
+                        <span>Fair</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="seatComfort" value="3">
+                        <span class="rating-emoji">😐</span>
+                        <span>Average</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="seatComfort" value="4">
+                        <span class="rating-emoji">🙂</span>
+                        <span>Good</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="seatComfort" value="5">
+                        <span class="rating-emoji">😊</span>
+                        <span>Excellent</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Noise Level</label>
+                <div class="rating-container">
+                    <label class="rating-option">
+                        <input type="radio" name="noiseLevel" value="1" required>
+                        <span class="rating-emoji">😠</span>
+                        <span>Very Loud</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="noiseLevel" value="2">
+                        <span class="rating-emoji">😕</span>
+                        <span>Loud</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="noiseLevel" value="3">
+                        <span class="rating-emoji">😐</span>
+                        <span>Moderate</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="noiseLevel" value="4">
+                        <span class="rating-emoji">🙂</span>
+                        <span>Quiet</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="noiseLevel" value="5">
+                        <span class="rating-emoji">😊</span>
+                        <span>Very Quiet</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="comfortComments">Additional Comments</label>
+                <textarea id="comfortComments" class="form-control" placeholder="Any other feedback about your coach experience..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit Rating</button>
+        </form>
+    </div>
+    
+    <!-- Luggage Main Menu Container -->
+    <div class="container luggage-container" id="luggageContainer">
+        <div class="icon">🧳</div>
+        <h1>Luggage Space Checker</h1>
+        <p>Report or check luggage space availability in train coaches</p>
+        
+        <div class="btn-container">
+            <button class="btn btn-luggage" id="reportBtn">Report Luggage Space</button>
+            <button class="btn btn-secondary" id="checkBtn">Check Luggage Space</button>
+        </div>
+    </div>
+    
+    <!-- Report Luggage Space Container -->
+    <div class="container report-container" id="reportContainer">
+        <div class="icon">📝</div>
+        <h1>Report Luggage Space</h1>
+        <p>Help others by reporting current luggage space status in your coach</p>
+        
+        <form id="reportForm">
+            <div class="form-group">
+                <label for="reportTrainNumber">Train Number/Name</label>
+                <input type="text" id="reportTrainNumber" class="form-control" placeholder="Enter train number or name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="reportCoachNumber">Coach Number</label>
+                <input type="text" id="reportCoachNumber" class="form-control" placeholder="Enter coach number (e.g., B3)" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Current Luggage Space Status</label>
+                <div class="status-container">
+                    <label class="status-option">
+                        <input type="radio" name="spaceStatus" value="free" required>
+                        <span class="status-emoji">✅</span>
+                        <span class="status-label">Plenty of Space</span>
+                    </label>
+                    <label class="status-option">
+                        <input type="radio" name="spaceStatus" value="limited">
+                        <span class="status-emoji">⚠️</span>
+                        <span class="status-label">Limited Space</span>
+                    </label>
+                    <label class="status-option">
+                        <input type="radio" name="spaceStatus" value="full">
+                        <span class="status-emoji">❌</span>
+                        <span class="status-label">Full</span>
+                    </label>
+                    <label class="status-option">
+                        <input type="radio" name="spaceStatus" value="overflow">
+                        <span class="status-emoji">🚨</span>
+                        <span class="status-label">Overflowing</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="reportComments">Additional Details</label>
+                <textarea id="reportComments" class="form-control" placeholder="Any details about luggage racks, floor space, etc..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-luggage">Submit Report</button>
+        </form>
+    </div>
+    
+    <!-- Check Luggage Space Container -->
+    <div class="container check-container" id="checkContainer">
+        <div class="icon">🔍</div>
+        <h1>Check Luggage Space</h1>
+        <p>See recent reports about luggage space availability</p>
+        
+        <form id="checkForm">
+            <div class="form-group">
+                <label for="checkTrainNumber">Train Number/Name</label>
+                <input type="text" id="checkTrainNumber" class="form-control" placeholder="Enter train number or name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="checkCoachNumber">Coach Number (optional)</label>
+                <input type="text" id="checkCoachNumber" class="form-control" placeholder="Enter specific coach number if known">
+            </div>
+            
+            <button type="submit" class="btn btn-secondary">Check Reports</button>
+        </form>
+        
+        <div id="luggageResults" class="results-container">
+            <h3>Recent Reports</h3>
+            <div id="reportResults">
+                <!-- Reports will be displayed here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Women-Safe Coach Container -->
+    <div class="container women-safe-container" id="womenSafeContainer">
+        <div class="icon">🚺</div>
+        <h1>Women-Safe Coach Indicator</h1>
+        <p>Find women-only coaches and their current location on platforms</p>
+        
+        <div class="form-group">
+            <label for="stationSelect">Select Station</label>
+            <select id="stationSelect" class="form-control" required>
+                <option value="">-- Select a station --</option>
+                <option value="delhi">Delhi (NDLS)</option>
+                <option value="mumbai">Mumbai Central (BCT)</option>
+                <option value="chennai">Chennai Central (MAS)</option>
+                <option value="kolkata">Howrah (HWH)</option>
+                <option value="bangalore">Bengaluru (SBC)</option>
+                <option value="hyderabad">Hyderabad (HYB)</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="trainSelect">Select Train</label>
+            <select id="trainSelect" class="form-control" required>
+                <option value="">-- Select a train --</option>
+                <option value="rajdhani">Rajdhani Express (12951)</option>
+                <option value="shatabdi">Shatabdi Express (12002)</option>
+                <option value="duronto">Duronto Express (12267)</option>
+                <option value="garib">Garib Rath (12201)</option>
+                <option value="vande">Vande Bharat (22201)</option>
+                <option value="sampark">Sampark Kranti (12449)</option>
+            </select>
+        </div>
+        
+        <button class="btn btn-women" id="findCoachBtn">Find Women-Safe Coach</button>
+        
+        <div id="womenResults" class="results-container">
+            <div class="train-map">
+                <div class="station-name" id="stationDisplay">Delhi (NDLS)</div>
+                <div class="direction-indicator" id="directionDisplay">Platform 3 (Towards Mumbai)</div>
+                <div class="platform"></div>
+                <div class="train" id="trainDisplay">
+                    <!-- Coaches will be added dynamically -->
+                </div>
+            </div>
+            
+            <div class="coach-info">
+                <div class="info-item">
+                    <span class="info-label">Women-Safe Coach:</span>
+                    <span class="info-value" id="womenCoachNumber">B2</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Location on Platform:</span>
+                    <span class="info-value" id="coachLocation">Near staircase 3</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Next Arrival:</span>
+                    <span class="info-value" id="nextArrival">12:45 PM (5 mins)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Train Direction:</span>
+                    <span class="info-value" id="trainDirection">Southbound</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Confirmation Container -->
+    <div class="container confirmation" id="confirmation">
+        <div class="confirmation-icon">✓</div>
+        <h2>Thank You!</h2>
+        <p id="confirmationMessage">Your submission has been received.</p>
+        <p>Your contribution helps improve travel for everyone.</p>
+        <button class="btn btn-primary" id="newSubmission">Make Another Submission</button>
+    </div>
+    
+    <!-- Chatbot Toggle Button -->
+    <div class="chatbot-toggle" id="chatbotToggle">
+        <i class="fas fa-robot"></i>
+    </div>
+    
+    <!-- Chatbot Container -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <div class="chatbot-title">Railway Assistant</div>
+            <button class="chatbot-close" id="chatbotClose">&times;</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <!-- Messages will be added here -->
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" placeholder="Type your message...">
+            <button id="chatbotSend"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <script src="script.js">   </script>
+</body>
+</html>
