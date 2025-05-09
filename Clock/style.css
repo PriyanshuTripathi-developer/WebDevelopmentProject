@@ -1,0 +1,70 @@
+body{
+    background-color: bisque;
+}
+#clock-container{
+    position: relative;
+    margin:auto;
+    height:45vw;
+    background-color: bisque;
+    width:45vw;
+    background: url(clock-03.png) no-repeat;
+    background-size: 100%;
+}
+#hours , #minutes , #seconds{
+    position: absolute;
+    background : black;
+    border-radius: 10px;
+    transform-origin: bottom;
+}
+keyframes color{
+    from {background: black;}
+    to { background: silver;}
+ }
+#hours{
+  height:20%;
+  width:0.8%;
+  top: 30%;
+  left: 49.6%;
+  animation-name: color;
+  animation-duration: 60min;
+  animation-timing-function: ease-in;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+}
+@keyframes Color{
+   from {background: springgreen;}
+   to { background: rgb(0, 255, 234);}
+}
+#minutes{
+    height:29%;
+    width:0.8%;
+    top: 21%;
+    left: 49.6%;
+    opacity: 0.8;
+    background-color:springgreen;
+    animation-name: Color;
+    animation-duration: 60s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+@keyframes Seco{
+    from {background-color: red;}
+    to { background-color: Orange;}
+}
+#seconds{
+    height:34%;
+    width:0.8%;
+    top: 16%;
+    left: 49.6%;
+    opacity: 0.8;
+    background-color: red;
+    animation-name: Seco;
+    animation-duration: 5s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
